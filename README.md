@@ -1,12 +1,19 @@
-# Welcome to your CDK JavaScript project!
+# CORS Proxy
 
-This is a blank project for JavaScript development with CDK.
+A HTTP proxy for CORS requests during local development built on AWS Lambda and API Gateway using the AWS CDK.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app. The build step is not required when using JavaScript.
+Proxies requests to API URLs specified in the `?url` query string parameter. E.g.
+
+`https://corsproxy.domain.com?url=https://api-url-to-proxy.com`
+
+This was built to get around CORS issues during local development in cases where APIs do not accept requests from your browser (e.g. when developing with React).
 
 ## Useful commands
 
- * `npm run test`         perform the jest unit tests
- * `cdk deploy`           deploy this stack to your default AWS account/region
- * `cdk diff`             compare deployed stack with current state
- * `cdk synth`            emits the synthesized CloudFormation template
+The [AWS CDK](https://aws.amazon.com/cdk/) was used to build this project.
+
+* `npm run test`         perform the jest unit tests
+* `cdk deploy`           deploy this stack to your default AWS account/region
+* `cdk diff`             compare deployed stack with current state
+* `npm run synth`        emits the synthesized CloudFormation template
+* `npm run invoke`       invoke your lambda locally with AWS SAM using the sythensized CloudFormation template
