@@ -6,7 +6,7 @@ Proxies requests to API URLs specified in the `?url` query string parameter. E.g
 
 `https://corsproxy.domain.com?url=https://api-url-to-proxy.com`
 
-This was built to get around CORS issues during local development in cases where APIs do not accept requests from your browser (e.g. when developing with React).
+This was built to get around CORS issues during local development in cases where APIs do not accept requests from your browser (e.g. when using the fetch() API from your local browser).
 
 ## Useful commands
 
