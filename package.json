@@ -7,14 +7,19 @@
   "scripts": {
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
     "cdk": "cdk",
-    "test": "jest"
+    "test": "jest",
+    "synth": "cdk synth --no-staging > template.yaml",
+    "invoke": "sam local invoke -e event.json $(grep -B 1 \"AWS::Lambda::Function\" template.yaml | grep \"Handler\" | cut -f 1 -d \":\" | awk '{$1=$1};1')"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.64.0",
-    "aws-cdk": "1.64.0",
+    "@aws-cdk/assert": "1.65.0",
+    "aws-cdk": "1.65.0",
     "jest": "^26.4.2"
   },
   "dependencies": {
-    "@aws-cdk/core": "1.64.0"
+    "@aws-cdk/aws-apigateway": "1.65.0",
+    "@aws-cdk/aws-apigatewayv2": "^1.65.0",
+    "@aws-cdk/aws-lambda": "1.65.0",
+    "@aws-cdk/core": "1.65.0"
   }
 }
