@@ -12,13 +12,13 @@
     "invoke": "sam local invoke -e event.json $(grep -B 1 \"AWS::Lambda::Function\" template.yaml | grep \"Handler\" | cut -f 1 -d \":\" | awk '{$1=$1};1')"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.65.0",
+    "@aws-cdk/assert": "1.184.1",
     "aws-cdk": "1.174.0",
     "jest": "^26.4.2"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "1.65.0",
-    "@aws-cdk/aws-lambda": "1.65.0",
+    "@aws-cdk/aws-apigateway": "1.184.1",
+    "@aws-cdk/aws-lambda": "1.184.1",
     "@aws-cdk/core": "1.65.0"
   }
 }
